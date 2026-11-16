@@ -1,6 +1,6 @@
 """
-TruthLens AI - UI Components & Telemetry Utility (Road to Milky Way Theme)
-Renders cosmic space headers, cards, system monitors, and sidebar telemetries matching roadtomilkyway.com.
+TruthLens AI - UI Components & Telemetry Utility (CyberShield AI Theme)
+Renders high-tech cyber defense headers, glassmorphism cards, neural monitors, and sidebar telemetries.
 """
 
 import streamlit as st
@@ -25,7 +25,7 @@ def render_html(html_str: str):
 
 
 def load_custom_css():
-    """Inject the Road to Milky Way cosmic space stylesheet."""
+    """Inject the CyberShield AI cyber defense stylesheet."""
     css_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets", "styles.css")
     if os.path.exists(css_path):
         with open(css_path, "r", encoding="utf-8") as f:
@@ -33,21 +33,21 @@ def load_custom_css():
 
 
 def render_sidebar_telemetry():
-    """Render cosmic telemetry, engine status indicators, and system diagnostics in sidebar."""
+    """Render cyber telemetry, engine status indicators, and system diagnostics in sidebar."""
     with st.sidebar:
         render_html("""
-            <div style="padding: 0.8rem 0; border-bottom: 2px solid #141d5a; margin-bottom: 1rem;">
+            <div style="padding: 0.8rem 0; border-bottom: 1.5px solid rgba(22, 139, 255, 0.25); margin-bottom: 1rem;">
                 <div style="display: flex; align-items: center; gap: 0.65rem;">
-                    <div style="background: linear-gradient(135deg, #506cd9, #22d974); width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; box-shadow: 3px 3px 0px #182276; border: 1.5px solid #ffe3c5;">
-                        🌌
+                    <div style="background: linear-gradient(135deg, #168BFF, #00E5FF); width: 38px; height: 38px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; box-shadow: 0 0 12px rgba(0, 229, 255, 0.4); border: 1.5px solid #38D9FF;">
+                        🛡️
                     </div>
                     <div>
-                        <div style="font-weight: 900; font-size: 1.15rem; color: #FFFFFF; letter-spacing: -0.01em;">TRUTHLENS <span style="color: #ffe3c5;">AI</span></div>
-                        <div style="font-size: 0.68rem; color: #a9b4e8; letter-spacing: 0.08em; text-transform: uppercase;">Road to Milky Way Edition</div>
+                        <div style="font-weight: 900; font-size: 1.15rem; color: #FFFFFF; letter-spacing: -0.01em;">CyberShield <span style="color: #38D9FF;">AI</span></div>
+                        <div style="font-size: 0.68rem; color: #8FA2C1; letter-spacing: 0.08em; text-transform: uppercase;">Real-Time Threat Intel</div>
                     </div>
                 </div>
             </div>
-            <div style="font-size: 0.72rem; color: #ffe3c5; font-weight: 800; text-transform: uppercase; letter-spacing: 0.09em; margin-bottom: 0.6rem;">Cosmic AI Engines</div>
+            <div style="font-size: 0.72rem; color: #38D9FF; font-weight: 800; text-transform: uppercase; letter-spacing: 0.09em; margin-bottom: 0.6rem;">Active Threat Engines</div>
         """)
         
         # Check text engine
@@ -63,21 +63,21 @@ def render_sidebar_telemetry():
         df_status = "online" if df_det.is_configured else "standby"
 
         render_html(f"""
-            <div style="background: #0a1240; border: 2px solid #26327f; border-radius: 10px; padding: 0.75rem 0.9rem; margin-bottom: 1rem; box-shadow: 3px 3px 0px #182276;">
+            <div style="background: rgba(6, 21, 43, 0.85); border: 1.5px solid rgba(22, 139, 255, 0.3); border-radius: 8px; padding: 0.75rem 0.9rem; margin-bottom: 1rem; box-shadow: 0 4px 15px rgba(2, 11, 26, 0.5);">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.45rem; font-size: 0.8rem;">
-                    <span style="color: #ffffff; font-weight: 600;">NLP Misinformation</span>
-                    <span><span class="pulse-dot {text_status}"></span> <span style="font-size: 0.72rem; color: #22d974; font-weight: 700;">ONLINE</span></span>
+                    <span style="color: #F0F4F8; font-weight: 600;">Behavior Analysis</span>
+                    <span><span class="pulse-dot {text_status}"></span> <span style="font-size: 0.72rem; color: #10E79D; font-weight: 700;">SCANNING</span></span>
                 </div>
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.45rem; font-size: 0.8rem;">
-                    <span style="color: #ffffff; font-weight: 600;">Synthetic Vision (ViT)</span>
-                    <span><span class="pulse-dot {img_status}"></span> <span style="font-size: 0.72rem; color: {'#22d974' if img_status == 'online' else '#ead11f'}; font-weight: 700;">{'ONLINE' if img_status == 'online' else 'STANDBY'}</span></span>
+                    <span style="color: #F0F4F8; font-weight: 600;">Anomaly Detection (ViT)</span>
+                    <span><span class="pulse-dot {img_status}"></span> <span style="font-size: 0.72rem; color: {'#10E79D' if img_status == 'online' else '#FFB300'}; font-weight: 700;">{'ONLINE' if img_status == 'online' else 'STANDBY'}</span></span>
                 </div>
                 <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem;">
-                    <span style="color: #ffffff; font-weight: 600;">Universal Video Forensics</span>
-                    <span><span class="pulse-dot {df_status}"></span> <span style="font-size: 0.72rem; color: {'#22d974' if df_status == 'online' else '#ead11f'}; font-weight: 700;">{'ACTIVE' if df_status == 'online' else 'STANDBY'}</span></span>
+                    <span style="color: #F0F4F8; font-weight: 600;">ML Video Classification</span>
+                    <span><span class="pulse-dot {df_status}"></span> <span style="font-size: 0.72rem; color: {'#10E79D' if df_status == 'online' else '#FFB300'}; font-weight: 700;">{'ACTIVE' if df_status == 'online' else 'STANDBY'}</span></span>
                 </div>
             </div>
-            <div style="font-size: 0.72rem; color: #ffe3c5; font-weight: 800; text-transform: uppercase; letter-spacing: 0.09em; margin-bottom: 0.6rem;">Spacecraft Telemetry</div>
+            <div style="font-size: 0.72rem; color: #38D9FF; font-weight: 800; text-transform: uppercase; letter-spacing: 0.09em; margin-bottom: 0.6rem;">SOC Node Diagnostics</div>
         """)
 
         # GPU detection
@@ -98,32 +98,32 @@ def render_sidebar_telemetry():
             ram_usage = 0
 
         render_html(f"""
-            <div style="background: #0a1240; border: 2px solid #26327f; border-radius: 10px; padding: 0.75rem 0.9rem; margin-bottom: 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; box-shadow: 3px 3px 0px #182276;">
-                <div style="color: #22d974; margin-bottom: 0.35rem; font-weight: 700;">⚡ ACCELERATOR: {'CUDA ACTIVE' if has_cuda else 'CPU FALLBACK'}</div>
-                <div style="color: #a9b4e8; font-size: 0.7rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 0.5rem;" title="{gpu_name}">{gpu_name}</div>
-                <div style="display: flex; justify-content: space-between; color: #ffffff; margin-bottom: 0.25rem;">
-                    <span>CPU Core Load</span><span style="color: #ffe3c5;">{cpu_usage}%</span>
+            <div style="background: rgba(6, 21, 43, 0.85); border: 1.5px solid rgba(22, 139, 255, 0.3); border-radius: 8px; padding: 0.75rem 0.9rem; margin-bottom: 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; box-shadow: 0 4px 15px rgba(2, 11, 26, 0.5);">
+                <div style="color: #10E79D; margin-bottom: 0.35rem; font-weight: 700;">⚡ ACCELERATOR: {'CUDA ACTIVE' if has_cuda else 'CPU FALLBACK'}</div>
+                <div style="color: #8FA2C1; font-size: 0.7rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 0.5rem;" title="{gpu_name}">{gpu_name}</div>
+                <div style="display: flex; justify-content: space-between; color: #F0F4F8; margin-bottom: 0.25rem;">
+                    <span>CPU Core Load</span><span style="color: #38D9FF;">{cpu_usage}%</span>
                 </div>
-                <div style="display: flex; justify-content: space-between; color: #ffffff;">
-                    <span>Memory Allocation</span><span style="color: #ffe3c5;">{ram_usage}%</span>
+                <div style="display: flex; justify-content: space-between; color: #F0F4F8;">
+                    <span>Memory Allocation</span><span style="color: #38D9FF;">{ram_usage}%</span>
                 </div>
             </div>
-            <div style="font-size: 0.68rem; color: #a9b4e8; text-align: center; border-top: 1.5px solid #141d5a; padding-top: 0.75rem;">
-                TruthLens v2.0 // Road to Milky Way<br/>Cosmic Multimodal Forensics
+            <div style="font-size: 0.68rem; color: #8FA2C1; text-align: center; border-top: 1.5px solid rgba(22, 139, 255, 0.2); padding-top: 0.75rem;">
+                CyberShield AI // TruthLens Enterprise<br/>Security Operations Command
             </div>
         """)
 
 
-def render_header(title: str, subtitle: str, badge_text: str = "FORENSIC SYSTEM ONLINE", badge_type: str = "safe"):
-    """Render consistent Road to Milky Way HUD top title bar."""
+def render_header(title: str, subtitle: str, badge_text: str = "SYSTEM PROTECTED", badge_type: str = "safe"):
+    """Render consistent CyberShield AI HUD top title bar."""
     badge_class = f"badge-{badge_type}"
     render_html(f"""
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 2px solid #141d5a; flex-wrap: wrap; gap: 0.75rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1.5px solid rgba(22, 139, 255, 0.25); flex-wrap: wrap; gap: 0.75rem;">
             <div>
-                <div style="font-size: 1.35rem; font-weight: 900; color: #FFFFFF; font-family: 'JetBrains Mono', monospace; letter-spacing: -0.01em;">
+                <div style="font-size: 1.35rem; font-weight: 900; color: #FFFFFF; font-family: 'Inter', sans-serif; letter-spacing: -0.01em;">
                     {title}
                 </div>
-                <div style="font-size: 0.78rem; color: #a9b4e8; margin-top: 0.15rem; font-weight: 500;">
+                <div style="font-size: 0.78rem; color: #8FA2C1; margin-top: 0.15rem; font-weight: 500;">
                     {subtitle}
                 </div>
             </div>

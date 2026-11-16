@@ -1,5 +1,5 @@
 """
-TruthLens AI - System Architecture, Threat Modeling & Forensics Guide (Road to Milky Way Theme)
+TruthLens AI - System Architecture, Threat Modeling & Forensics Guide (CyberShield AI Theme)
 Comprehensive documentation on architecture, algorithmic integrity, ethics, and operational methodology.
 """
 
@@ -26,7 +26,7 @@ render_sidebar_telemetry()
 render_header(
     title="SYSTEM INTELLIGENCE // ARCHITECTURAL DOSSIER",
     subtitle="Engineering specification, threat surface analysis, and ethical operational boundaries",
-    badge_text="ROAD TO MILKY WAY",
+    badge_text="CYBERSHIELD AI",
     badge_type="info"
 )
 
@@ -88,7 +88,7 @@ with col_doc2:
             </div>
             <div style="font-size: 0.8rem; color: #ffe3c5; line-height: 1.6; font-family: 'JetBrains Mono', monospace;">
                 • Python: 3.11 Runtime<br/>
-                • Frontend: Streamlit (Road to Milky Way CSS)<br/>
+                • Frontend: Streamlit (CyberShield AI Real-Time UI)<br/>
                 • Deep Learning: PyTorch + CUDA/CPU<br/>
                 • NLP Models: Hugging Face Transformers<br/>
                 • Explainability: LIME (Local Surrogates)<br/>
@@ -115,7 +115,7 @@ with col_doc2:
 
         <div class="terminal-box" style="margin-top: 0.8rem;">
             [COMMAND CENTER STATUS]<br/>
-            STATION: BANGALORE MILKY WAY NODE<br/>
+            STATION: CYBERSHIELD DEFENSE NODE<br/>
             STATUS: NOMINAL<br/>
             INTEGRITY AUDIT: 100% PASSED
         </div>

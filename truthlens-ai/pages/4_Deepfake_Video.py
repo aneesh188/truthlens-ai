@@ -244,7 +244,7 @@ with tab_video:
                         <div class="cyber-card" style="height: 100%;">
                             <div style="font-size: 0.85rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.8rem; display: flex; justify-content: space-between;">
                                 <span>TAXONOMY DETECTION BREAKDOWN</span>
-                                <span style="font-size: 0.72rem; color: #ffe3c5; font-family: monospace;">ROAD TO MILKY WAY</span>
+                                <span style="font-size: 0.72rem; color: #38D9FF; font-family: monospace;">CYBERSHIELD AI</span>
                             </div>
                     """)
 
