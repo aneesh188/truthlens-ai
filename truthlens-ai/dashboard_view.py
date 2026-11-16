@@ -34,6 +34,12 @@ def render_dashboard():
 
     now_utc = datetime.utcnow().strftime("%H:%M:%S UTC // %b %d, %Y")
 
+    # --- ROAD TO MILKY WAY: HYPERSPACE WARP SPEED LAUNCHPAD ---
+    import streamlit.components.v1 as components
+    from warp_portal import get_warp_portal_html
+    components.html(get_warp_portal_html(520), height=520)
+    st.markdown("<div style='height: 0.8rem;'></div>", unsafe_allow_html=True)
+
     # --- TOP ROAD TO MILKY WAY CAPSULE NAVBAR ---
     render_html(f"""
         <div style="background: #000621; border: 2px solid #ffe3c5; border-radius: 999px; box-shadow: 3px 3px 0px #182276; padding: 0.5rem 1.25rem; margin-bottom: 1.2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.6rem;">
