@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Streamlit
+.streamlit/
+
+# Database
+truthlens.db
+*.sqlite3
+
+# Models & Checkpoints
+checkpoints/*.pth
+checkpoints/*.pt
+checkpoints/*.bin
+checkpoints/*.onnx
+!checkpoints/.gitkeep
+
+# Data cache
+data/*.csv
+data/*.mp4
+data/*.wav
+!data/news_benchmark.json
+!data/.gitkeep
+!data/create_sample_assets.py
+!data/dataset.py
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

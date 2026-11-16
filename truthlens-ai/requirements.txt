@@ -1,0 +1,15 @@
+# TruthLens AI - Multimodal Media Intelligence Platform
+# Core Dependencies
+streamlit>=1.35.0
+torch>=2.2.0
+torchvision>=0.17.0
+transformers>=4.40.0
+opencv-python>=4.9.0
+scikit-learn>=1.4.0
+lime>=0.2.0
+plotly>=5.20.0
+pandas>=2.2.0
+numpy>=1.26.0
+Pillow>=10.2.0
+requests>=2.31.0
+timm>=0.9.16
