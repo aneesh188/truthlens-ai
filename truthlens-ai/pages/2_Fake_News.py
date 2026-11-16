@@ -1,5 +1,5 @@
 """
-TruthLens AI - Fake News Text Intelligence
+TruthLens AI - Fake News Text Intelligence (Road to Milky Way Theme)
 Classifies news articles and narrative claims using fine-tuned NLP models and LIME explainability.
 """
 
@@ -60,7 +60,7 @@ SAMPLE_TEXTS = {
 }
 
 render_html("""
-    <div style="font-size: 0.82rem; font-weight: 700; color: #8BA2C1; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem;">
+    <div style="font-size: 0.82rem; font-weight: 800; color: #ffe3c5; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem;">
         Load Verified Benchmark Samples
     </div>
 """)
@@ -123,18 +123,18 @@ if analyze_clicked:
 
                 with r1:
                     is_fake = "FAKE" in pred
-                    badge_style = "border-left: 4px solid #FF454F;" if is_fake else "border-left: 4px solid #19D69B;"
-                    pred_color = "#FF454F" if is_fake else "#19D69B"
+                    badge_style = "border-left: 5px solid #d13f30;" if is_fake else "border-left: 5px solid #22d974;"
+                    pred_color = "#d13f30" if is_fake else "#22d974"
                     render_html(f"""
                         <div class="cyber-card" style="{badge_style}">
-                            <div style="font-size: 0.72rem; color: #8BA2C1; text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em;">
+                            <div style="font-size: 0.72rem; color: #a9b4e8; text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em;">
                                 Forensic Classification
                             </div>
-                            <div style="font-size: 1.6rem; font-weight: 800; color: {pred_color}; margin: 0.3rem 0; font-family: 'JetBrains Mono', monospace;">
+                            <div style="font-size: 1.6rem; font-weight: 900; color: {pred_color}; margin: 0.3rem 0; font-family: 'JetBrains Mono', monospace;">
                                 {pred}
                             </div>
-                            <div style="font-size: 0.75rem; color: #8BA2C1;">
-                                Tracking ID: <span style="color: #38D9FF; font-family: 'JetBrains Mono', monospace;">{tracking_code}</span>
+                            <div style="font-size: 0.75rem; color: #a9b4e8;">
+                                Tracking ID: <span style="color: #ffe3c5; font-family: 'JetBrains Mono', monospace; font-weight: 700;">{tracking_code}</span>
                             </div>
                         </div>
                     """)
@@ -142,13 +142,13 @@ if analyze_clicked:
                 with r2:
                     render_html(f"""
                         <div class="cyber-card">
-                            <div style="font-size: 0.72rem; color: #8BA2C1; text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em;">
+                            <div style="font-size: 0.72rem; color: #a9b4e8; text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em;">
                                 Model Confidence
                             </div>
-                            <div style="font-size: 1.6rem; font-weight: 800; color: #FFFFFF; margin: 0.3rem 0; font-family: 'JetBrains Mono', monospace;">
+                            <div style="font-size: 1.6rem; font-weight: 900; color: #FFFFFF; margin: 0.3rem 0; font-family: 'JetBrains Mono', monospace;">
                                 {conf * 100:.1f}%
                             </div>
-                            <div style="font-size: 0.75rem; color: #8BA2C1;">
+                            <div style="font-size: 0.75rem; color: #a9b4e8;">
                                 Softmax probability margin
                             </div>
                         </div>
@@ -157,13 +157,13 @@ if analyze_clicked:
                 with r3:
                     render_html(f"""
                         <div class="cyber-card">
-                            <div style="font-size: 0.72rem; color: #8BA2C1; text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em;">
+                            <div style="font-size: 0.72rem; color: #a9b4e8; text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em;">
                                 Active Forensic Engine
                             </div>
-                            <div style="font-size: 0.95rem; font-weight: 700; color: #38D9FF; margin: 0.4rem 0;">
+                            <div style="font-size: 0.95rem; font-weight: 800; color: #ffe3c5; margin: 0.4rem 0;">
                                 {model_name}
                             </div>
-                            <div style="font-size: 0.72rem; color: #8BA2C1;">
+                            <div style="font-size: 0.72rem; color: #a9b4e8;">
                                 {status_msg}
                             </div>
                         </div>
@@ -171,7 +171,7 @@ if analyze_clicked:
 
                 # Class probabilities breakdown bar
                 render_html("""
-                    <div style="font-size: 0.82rem; font-weight: 700; color: #8BA2C1; letter-spacing: 0.08em; text-transform: uppercase; margin: 0.75rem 0 0.4rem 0;">
+                    <div style="font-size: 0.82rem; font-weight: 800; color: #ffe3c5; letter-spacing: 0.08em; text-transform: uppercase; margin: 0.75rem 0 0.4rem 0;">
                         Class Probability Spectrum
                     </div>
                 """)
@@ -182,7 +182,7 @@ if analyze_clicked:
                     x=[probs["REAL"] * 100],
                     name="Authentic / Real",
                     orientation="h",
-                    marker=dict(color="#19D69B"),
+                    marker=dict(color="#22d974"),
                     text=[f"REAL: {probs['REAL']*100:.1f}%"],
                     textposition="inside"
                 ))
@@ -191,7 +191,7 @@ if analyze_clicked:
                     x=[probs["POTENTIALLY FAKE"] * 100],
                     name="Potentially Fake",
                     orientation="h",
-                    marker=dict(color="#FF454F"),
+                    marker=dict(color="#d13f30"),
                     text=[f"POTENTIALLY FAKE: {probs['POTENTIALLY FAKE']*100:.1f}%"],
                     textposition="inside"
                 ))
@@ -199,7 +199,7 @@ if analyze_clicked:
                     barmode="stack",
                     paper_bgcolor="rgba(0,0,0,0)",
                     plot_bgcolor="rgba(0,0,0,0)",
-                    font=dict(color="#F0F4F8", family="Inter"),
+                    font=dict(color="#ffe3c5", family="Inter"),
                     margin=dict(l=10, r=10, t=10, b=10),
                     height=80,
                     showlegend=True,
@@ -212,7 +212,7 @@ if analyze_clicked:
                 render_html("<div style='height: 1rem;'></div>")
                 render_html("""
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
-                        <span style="font-size: 0.82rem; font-weight: 700; color: #8BA2C1; letter-spacing: 0.08em; text-transform: uppercase;">
+                        <span style="font-size: 0.82rem; font-weight: 800; color: #ffe3c5; letter-spacing: 0.08em; text-transform: uppercase;">
                             🧠 Explainable AI: Token Attribution (LIME)
                         </span>
                         <span class="badge-info">LOCAL ATTRIBUTION</span>
@@ -231,7 +231,7 @@ if analyze_clicked:
                         with col_lime1:
                             words = [f["word"] for f in features]
                             weights = [f["weight"] for f in features]
-                            colors = ["#FF454F" if w > 0 else "#19D69B" for w in weights]
+                            colors = ["#d13f30" if w > 0 else "#22d974" for w in weights]
                             
                             fig_lime = go.Figure(go.Bar(
                                 x=weights,
@@ -242,47 +242,42 @@ if analyze_clicked:
                                 textposition="auto"
                             ))
                             fig_lime.update_layout(
-                                title=dict(text="Token Influence (+ towards Fake, - towards Real)", font=dict(size=12, color="#8BA2C1")),
                                 paper_bgcolor="rgba(0,0,0,0)",
                                 plot_bgcolor="rgba(0,0,0,0)",
-                                font=dict(color="#F0F4F8", family="Inter"),
-                                margin=dict(l=40, r=20, t=30, b=20),
-                                height=280,
-                                xaxis=dict(gridcolor="rgba(22, 139, 255, 0.15)", title="Attribution Weight"),
-                                yaxis=dict(autorange="reversed")
+                                font=dict(color="#ffe3c5", family="Inter"),
+                                margin=dict(l=20, r=20, t=20, b=20),
+                                height=260,
+                                yaxis=dict(autorange="reversed", gridcolor="rgba(38, 50, 127, 0.35)"),
+                                xaxis=dict(title="Attribution Weight (Red: Fake, Green: Real)", gridcolor="rgba(38, 50, 127, 0.35)")
                             )
                             st.plotly_chart(fig_lime, use_container_width=True)
 
                         with col_lime2:
-                            render_html(f"""
-                                <div class="cyber-card" style="height: 280px; display: flex; flex-direction: column; justify-content: space-between;">
-                                    <div>
-                                        <div style="font-weight: 700; color: #38D9FF; font-size: 0.9rem; margin-bottom: 0.4rem;">
-                                            Decision Rationale
-                                        </div>
-                                        <div style="font-size: 0.8rem; color: #8BA2C1; line-height: 1.5;">
-                                            {lime_res['explanation_text']}
-                                        </div>
-                                        <div style="margin-top: 0.75rem; font-size: 0.78rem;">
-                                            <div style="color: #FF454F; margin-bottom: 0.25rem;">
-                                                ▲ Fake Drivers: <b>{', '.join(lime_res.get('top_fake_tokens', [])) or 'None'}</b>
-                                            </div>
-                                            <div style="color: #19D69B;">
-                                                ▼ Real Drivers: <b>{', '.join(lime_res.get('top_real_tokens', [])) or 'None'}</b>
-                                            </div>
-                                        </div>
+                            render_html("""
+                                <div class="cyber-card" style="height: 260px; overflow-y: auto;">
+                                    <div style="font-weight: 800; color: #ffe3c5; font-size: 0.85rem; margin-bottom: 0.4rem;">
+                                        Token Weight Ledger
                                     </div>
-                                    <div style="font-size: 0.7rem; color: #4F6785; border-top: 1px solid rgba(22, 139, 255, 0.15); padding-top: 0.4rem;">
-                                        Tokens evaluated using 300 perturbed neighborhood surrogates.
+                                    <div style="font-size: 0.72rem; color: #a9b4e8; margin-bottom: 0.6rem;">
+                                        Positive weights increase probability of misleading classification.
                                     </div>
-                                </div>
                             """)
+                            for f in features:
+                                is_pos = f["weight"] > 0
+                                w_col = "#d13f30" if is_pos else "#22d974"
+                                render_html(f"""
+                                    <div style="display: flex; justify-content: space-between; padding: 0.25rem 0; border-bottom: 1px solid #141d5a; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;">
+                                        <span style="color: #FFFFFF;">{f['word']}</span>
+                                        <span style="color: {w_col}; font-weight: 700;">{f['weight']:+.4f}</span>
+                                    </div>
+                                """)
+                            render_html("</div>")
                     else:
-                        st.info(f"LIME Notice: {lime_res.get('error', 'Token attribution unavailable for this input.')}")
+                        st.info("LIME surrogate explanation unavailable or could not generate sufficient feature perturbances for this short text sample.")
 
-                # Mandatory Disclaimer
-                render_html(f"""
-                    <div style="background: rgba(22, 139, 255, 0.08); border: 1px solid rgba(22, 139, 255, 0.2); border-radius: 6px; padding: 0.8rem 1rem; margin-top: 1rem; font-size: 0.75rem; color: #8BA2C1; line-height: 1.45;">
-                        <span style="color: #38D9FF; font-weight: 700;">FORENSIC AUDITING DISCLAIMER:</span> {res['disclaimer']}
+                # Transparent methodology disclaimer
+                render_html("""
+                    <div style="background: #0a1240; border: 2px solid #26327f; border-radius: 10px; padding: 0.85rem 1.15rem; margin-top: 1rem; font-size: 0.75rem; color: #a9b4e8; line-height: 1.5; box-shadow: 3px 3px 0px #182276;">
+                        <span style="color: #ffe3c5; font-weight: 800;">AUDIT PROTOCOL NOTICE:</span> This engine detects lexical patterns, clickbait grammar, sensationalist rhetoric, and narrative indicators common in deceptive reporting. It is an assistive AI tool and does not replace human investigative journalism or factual ground-truth verification.
                     </div>
                 """)

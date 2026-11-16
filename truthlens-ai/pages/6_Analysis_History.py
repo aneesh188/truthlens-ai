@@ -1,5 +1,5 @@
 """
-TruthLens AI - Forensic Audit History & Telemetry Log
+TruthLens AI - Forensic Audit History & Telemetry Log (Road to Milky Way Theme)
 Full audit trail of all multimodal analyses stored in SQLite with search, filters, and export capabilities.
 """
 
@@ -63,8 +63,8 @@ records = get_all_analyses(
 
 render_html(f"""
     <div style="display: flex; justify-content: space-between; align-items: center; margin: 1rem 0 0.5rem 0;">
-        <div style="font-size: 0.82rem; font-weight: 700; color: #8BA2C1; letter-spacing: 0.08em; text-transform: uppercase;">
-            Matching Records: <span style="color: #38D9FF;">{len(records)}</span>
+        <div style="font-size: 0.82rem; font-weight: 800; color: #ffe3c5; letter-spacing: 0.08em; text-transform: uppercase;">
+            Matching Records: <span style="color: #22d974;">{len(records)}</span>
         </div>
     </div>
 """)
@@ -121,7 +121,7 @@ if records:
     # Detailed Inspection Expander
     render_html("<div style='height: 1.5rem;'></div>")
     render_html("""
-        <div style="font-size: 0.82rem; font-weight: 700; color: #8BA2C1; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem;">
+        <div style="font-size: 0.82rem; font-weight: 800; color: #ffe3c5; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem;">
             Inspect Individual Record Metadata
         </div>
     """)
@@ -155,8 +155,8 @@ else:
     render_html("""
         <div class="cyber-card" style="text-align: center; padding: 3rem;">
             <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">📜</div>
-            <div style="font-size: 1.05rem; font-weight: 700; color: #FFFFFF;">Audit Ledger is Empty</div>
-            <div style="font-size: 0.82rem; color: #8BA2C1; margin-top: 0.25rem;">
+            <div style="font-size: 1.15rem; font-weight: 800; color: #FFFFFF;">Audit Ledger is Empty</div>
+            <div style="font-size: 0.82rem; color: #a9b4e8; margin-top: 0.25rem;">
                 No forensic analyses match the specified filter criteria. Analyses performed across Text, Image, and Video will automatically appear here.
             </div>
         </div>

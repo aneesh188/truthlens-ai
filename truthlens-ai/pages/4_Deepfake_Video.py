@@ -1,5 +1,5 @@
 """
-TruthLens AI - Universal AI Video Forensics & Deepfake Recognition
+TruthLens AI - Universal AI Video Forensics (Road to Milky Way Theme)
 Multi-category forensic analysis detecting AI-generated landscapes, cities, nature, animation,
 synthetic humans, facial deepfakes, and visual scene manipulation across temporal video streams.
 """
@@ -46,7 +46,7 @@ detector = get_deepfake_detector()
 # ----------------- TAB 1: UNIVERSAL AI VIDEO ANALYSIS -----------------
 with tab_video:
     render_html("""
-        <div style="font-size: 0.82rem; font-weight: 700; color: #8BA2C1; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem;">
+        <div style="font-size: 0.82rem; font-weight: 800; color: #ffe3c5; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem;">
             Ingest Video Asset (MP4, AVI, MOV, MKV, WEBM)
         </div>
     """)
@@ -83,7 +83,7 @@ with tab_video:
             def update_progress(ratio, msg):
                 prog_bar.progress(min(max(0.0, float(ratio)), 1.0))
                 status_box.markdown(
-                    f"<div style='font-size: 0.75rem; color: #38D9FF; font-family: \"JetBrains Mono\", monospace; padding: 0.25rem 0;'>⚡ {msg}</div>",
+                    f"<div style='font-size: 0.75rem; color: #22d974; font-family: \"JetBrains Mono\", monospace; padding: 0.25rem 0;'>⚡ {msg}</div>",
                     unsafe_allow_html=True
                 )
 
@@ -146,30 +146,30 @@ with tab_video:
 
                 # ================= TOP VERDICT BANNER =================
                 is_ai_detected = ai_prob >= 0.48
-                verdict_color = "#FF454F" if is_ai_detected else "#19D69B"
-                badge_bg = "rgba(255, 69, 79, 0.15)" if is_ai_detected else "rgba(25, 214, 155, 0.15)"
-                badge_border = "#FF454F" if is_ai_detected else "#19D69B"
+                verdict_color = "#d13f30" if is_ai_detected else "#22d974"
+                badge_bg = "rgba(209, 63, 48, 0.16)" if is_ai_detected else "rgba(34, 217, 116, 0.16)"
+                badge_border = "#d13f30" if is_ai_detected else "#22d974"
 
                 render_html(f"""
-                    <div class="cyber-card" style="border-left: 5px solid {verdict_color}; background: #0B1D32; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem;">
+                    <div class="cyber-card" style="border-left: 6px solid {verdict_color}; background: #0a1240; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem;">
                         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
                             <div>
                                 <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.4rem;">
-                                    <span style="background: {badge_bg}; border: 1px solid {badge_border}; color: {verdict_color}; font-size: 0.72rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 4px; letter-spacing: 0.08em;">
+                                    <span style="background: {badge_bg}; border: 1.5px solid {badge_border}; color: {verdict_color}; font-size: 0.72rem; font-weight: 800; padding: 0.2rem 0.65rem; border-radius: 999px; letter-spacing: 0.08em;">
                                         {primary_cat.upper()}
                                     </span>
-                                    <span style="font-size: 0.75rem; color: #8BA2C1; font-family: 'JetBrains Mono', monospace;">AUDIT ID: {tracking_code}</span>
+                                    <span style="font-size: 0.75rem; color: #a9b4e8; font-family: 'JetBrains Mono', monospace;">AUDIT ID: {tracking_code}</span>
                                 </div>
-                                <div style="font-size: 1.4rem; font-weight: 900; color: #FFFFFF; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.03em;">
+                                <div style="font-size: 1.4rem; font-weight: 900; color: #FFFFFF; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.02em;">
                                     {pred}
                                 </div>
                             </div>
                             <div style="text-align: right;">
-                                <div style="font-size: 0.75rem; color: #8BA2C1; text-transform: uppercase; letter-spacing: 0.06em;">Composite AI Probability</div>
+                                <div style="font-size: 0.72rem; color: #a9b4e8; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700;">Composite AI Probability</div>
                                 <div style="font-size: 2.2rem; font-weight: 900; color: {verdict_color}; font-family: 'JetBrains Mono', monospace; line-height: 1.1;">
                                     {ai_prob*100:.1f}%
                                 </div>
-                                <div style="font-size: 0.72rem; color: #4F6785;">Confidence Level: {conf*100:.1f}%</div>
+                                <div style="font-size: 0.72rem; color: #ffe3c5;">Confidence Margin: {conf*100:.1f}%</div>
                             </div>
                         </div>
                     </div>
@@ -177,7 +177,7 @@ with tab_video:
 
                 # ================= 5-METRIC FORENSIC TELEMETRY =================
                 render_html("""
-                    <div style="font-size: 0.78rem; font-weight: 700; color: #8BA2C1; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.6rem;">
+                    <div style="font-size: 0.8rem; font-weight: 800; color: #ffe3c5; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.6rem;">
                         Multi-Stage Forensic Telemetry Gauges
                     </div>
                 """)
@@ -188,7 +188,7 @@ with tab_video:
                     render_html(f"""
                         <div class="stat-card">
                             <div class="stat-label">AI Video Probability</div>
-                            <div class="stat-value" style="color: {'#FF454F' if ai_prob > 0.5 else '#19D69B'};">{ai_prob*100:.1f}%</div>
+                            <div class="stat-value" style="color: {'#d13f30' if ai_prob > 0.5 else '#22d974'};">{ai_prob*100:.1f}%</div>
                             <div class="stat-footer">Multi-modal synthesis</div>
                         </div>
                     """)
@@ -196,8 +196,8 @@ with tab_video:
                 with c_m2:
                     render_html(f"""
                         <div class="stat-card">
-                            <div class="stat-label">Full-Frame Generative (ViT)</div>
-                            <div class="stat-value" style="color: {'#FF7A00' if visual_score > 0.5 else '#38D9FF'};">{visual_score*100:.1f}%</div>
+                            <div class="stat-label">Full-Frame ViT Score</div>
+                            <div class="stat-value" style="color: {'#506cd9' if visual_score > 0.5 else '#22d974'};">{visual_score*100:.1f}%</div>
                             <div class="stat-footer">Zero-face scene texture</div>
                         </div>
                     """)
@@ -207,8 +207,8 @@ with tab_video:
                     face_sub = f"{total_faces} face(s) localized" if face_score is not None else "Pure scene/landscape"
                     render_html(f"""
                         <div class="stat-card">
-                            <div class="stat-label">Facial Deepfake / Swap</div>
-                            <div class="stat-value" style="color: {'#FF454F' if face_score and face_score > 0.5 else '#8BA2C1'};">{face_str}</div>
+                            <div class="stat-label">Facial Deepfake</div>
+                            <div class="stat-value" style="color: {'#d13f30' if face_score and face_score > 0.5 else '#a9b4e8'};">{face_str}</div>
                             <div class="stat-footer">{face_sub}</div>
                         </div>
                     """)
@@ -217,7 +217,7 @@ with tab_video:
                     render_html(f"""
                         <div class="stat-card">
                             <div class="stat-label">Temporal Inconsistency</div>
-                            <div class="stat-value" style="color: {'#FFB300' if temporal_score > 0.4 else '#19D69B'};">{temporal_score*100:.1f}%</div>
+                            <div class="stat-value" style="color: {'#ead11f' if temporal_score > 0.4 else '#22d974'};">{temporal_score*100:.1f}%</div>
                             <div class="stat-footer">Flow divergence & flicker</div>
                         </div>
                     """)
@@ -225,7 +225,7 @@ with tab_video:
                 with c_m5:
                     has_aud = audio_report.get("has_audio", False)
                     aud_val = f"{audio_score*100:.0f}%" if has_aud else "Silent"
-                    aud_col = "#19D69B" if (has_aud and audio_score > 0.5) else ("#FF7A00" if has_aud else "#4F6785")
+                    aud_col = "#22d974" if (has_aud and audio_score > 0.5) else ("#506cd9" if has_aud else "#a9b4e8")
                     render_html(f"""
                         <div class="stat-card">
                             <div class="stat-label">Acoustic Authenticity</div>
@@ -242,33 +242,32 @@ with tab_video:
                 with col_left:
                     render_html("""
                         <div class="cyber-card" style="height: 100%;">
-                            <div style="font-size: 0.85rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.8rem; display: flex; justify-content: space-between;">
+                            <div style="font-size: 0.85rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.8rem; display: flex; justify-content: space-between;">
                                 <span>TAXONOMY DETECTION BREAKDOWN</span>
-                                <span style="font-size: 0.72rem; color: #38D9FF; font-family: monospace;">5 CATEGORIES</span>
+                                <span style="font-size: 0.72rem; color: #ffe3c5; font-family: monospace;">ROAD TO MILKY WAY</span>
                             </div>
                     """)
 
-                    # Show bars for core categories
                     category_palette = {
-                        "Face Deepfake & Reenactment": "#FF454F",
-                        "Fully AI-Generated Landscape / Nature": "#FF7A00",
-                        "AI Architecture & Urban Environment": "#38D9FF",
-                        "AI-Generated Human & Movement": "#FFB300",
-                        "AI Animation & 3D CGI": "#BD00FF",
-                        "AI Scene Manipulation / Inpainting": "#168BFF",
-                        "Authentic Unmanipulated Footage": "#19D69B"
+                        "Face Deepfake & Reenactment": "#d13f30",
+                        "Fully AI-Generated Landscape / Nature": "#506cd9",
+                        "AI Architecture & Urban Environment": "#ffe3c5",
+                        "AI-Generated Human & Movement": "#ead11f",
+                        "AI Animation & 3D CGI": "#f6aac8",
+                        "AI Scene Manipulation / Inpainting": "#a9b8f2",
+                        "Authentic Unmanipulated Footage": "#22d974"
                     }
 
                     for cat_name, cat_pct in cat_dist.items():
-                        c_color = category_palette.get(cat_name, "#8BA2C1")
+                        c_color = category_palette.get(cat_name, "#a9b4e8")
                         render_html(f"""
                             <div style="margin-bottom: 0.65rem;">
                                 <div style="display: flex; justify-content: space-between; font-size: 0.76rem; margin-bottom: 0.2rem;">
-                                    <span style="color: #F0F4F8; font-weight: 500;">{cat_name}</span>
-                                    <span style="color: {c_color}; font-weight: 700; font-family: monospace;">{cat_pct:.1f}%</span>
+                                    <span style="color: #F0F4F8; font-weight: 600;">{cat_name}</span>
+                                    <span style="color: {c_color}; font-weight: 800; font-family: monospace;">{cat_pct:.1f}%</span>
                                 </div>
-                                <div style="background: #061120; border-radius: 4px; height: 6px; width: 100%; overflow: hidden;">
-                                    <div style="background: {c_color}; width: {cat_pct}%; height: 100%; border-radius: 4px;"></div>
+                                <div style="background: #000621; border-radius: 999px; height: 6px; width: 100%; overflow: hidden; border: 1px solid #26327f;">
+                                    <div style="background: {c_color}; width: {cat_pct}%; height: 100%; border-radius: 999px;"></div>
                                 </div>
                             </div>
                         """)
@@ -280,14 +279,14 @@ with tab_video:
                     aud_summary = audio_report.get("summary", "Acoustic evaluation complete.")
                     render_html(f"""
                         <div class="cyber-card" style="height: 100%;">
-                            <div style="font-size: 0.85rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.6rem; display: flex; justify-content: space-between;">
+                            <div style="font-size: 0.85rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.6rem; display: flex; justify-content: space-between;">
                                 <span>AUDIO & VOCODER FORENSICS</span>
-                                <span style="font-size: 0.72rem; color: #38D9FF; font-family: monospace;">FFT ANALYSIS</span>
+                                <span style="font-size: 0.72rem; color: #ffe3c5; font-family: monospace;">FFT ANALYSIS</span>
                             </div>
-                            <div style="font-size: 0.78rem; color: #8BA2C1; margin-bottom: 0.8rem; line-height: 1.45;">
+                            <div style="font-size: 0.78rem; color: #a9b4e8; margin-bottom: 0.8rem; line-height: 1.45;">
                                 {aud_summary}
                             </div>
-                            <div class="terminal-box" style="font-size: 0.72rem; padding: 0.6rem;">
+                            <div class="terminal-box" style="font-size: 0.72rem; padding: 0.65rem;">
                                 [AUDIO STREAM STATUS]: {aud_status}<br/>
                                 [VOCAL SYNTHESIS PROB]: {audio_report.get('synthetic_speech_probability', 0.0)*100:.1f}%<br/>
                                 [ACOUSTIC AUTHENTICITY]: {audio_score*100:.1f}%<br/>
@@ -302,7 +301,7 @@ with tab_video:
                 frames_analyzed = results["frames_analyzed"]
                 if frames_analyzed:
                     render_html("""
-                        <div style="font-size: 0.82rem; font-weight: 700; color: #8BA2C1; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem;">
+                        <div style="font-size: 0.82rem; font-weight: 800; color: #ffe3c5; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem;">
                             Temporal Forensic Timeline (Frame-by-Frame Progression)
                         </div>
                     """)
@@ -320,7 +319,7 @@ with tab_video:
                         y=vit_vals,
                         mode="lines+markers",
                         name="Full-Frame ViT AI Score (%)",
-                        line=dict(color="#FF7A00", width=2.5),
+                        line=dict(color="#506cd9", width=2.5),
                         marker=dict(size=7, symbol="circle"),
                         text=cats,
                         hovertemplate="Time: %{x}s<br>ViT AI Score: %{y:.1f}%<br>Category: %{text}<extra></extra>"
@@ -333,7 +332,7 @@ with tab_video:
                             y=face_vals,
                             mode="lines+markers",
                             name="Facial Deepfake Score (%)",
-                            line=dict(color="#FF454F", width=2, dash="dot"),
+                            line=dict(color="#d13f30", width=2, dash="dot"),
                             marker=dict(size=6, symbol="diamond"),
                             hovertemplate="Time: %{x}s<br>Face Score: %{y:.1f}%<extra></extra>"
                         ))
@@ -342,7 +341,7 @@ with tab_video:
                     fig_timeline.add_hline(
                         y=50,
                         line_dash="dash",
-                        line_color="#38D9FF",
+                        line_color="#ffe3c5",
                         annotation_text="Suspicion Threshold (50%)",
                         annotation_position="bottom right"
                     )
@@ -350,7 +349,7 @@ with tab_video:
                     fig_timeline.update_layout(
                         paper_bgcolor="rgba(0,0,0,0)",
                         plot_bgcolor="rgba(0,0,0,0)",
-                        font=dict(color="#F0F4F8", family="Inter"),
+                        font=dict(color="#ffe3c5", family="Inter"),
                         margin=dict(l=25, r=25, t=25, b=25),
                         height=280,
                         legend=dict(
@@ -365,15 +364,15 @@ with tab_video:
                             title="Video Timeline (Seconds)",
                             showgrid=False,
                             zeroline=False,
-                            color="#8BA2C1"
+                            color="#a9b4e8"
                         ),
                         yaxis=dict(
                             title="Synthetic Likelihood (%)",
                             range=[0, 105],
                             showgrid=True,
-                            gridcolor="rgba(22, 139, 255, 0.12)",
+                            gridcolor="rgba(38, 50, 127, 0.35)",
                             zeroline=False,
-                            color="#8BA2C1"
+                            color="#a9b4e8"
                         )
                     )
                     st.plotly_chart(fig_timeline, use_container_width=True)
@@ -381,29 +380,28 @@ with tab_video:
                 # ================= SUSPICIOUS FRAME GALLERY =================
                 if suspicious_frames:
                     render_html("""
-                        <div style="font-size: 0.85rem; font-weight: 700; color: #FFFFFF; letter-spacing: 0.08em; text-transform: uppercase; margin: 1.25rem 0 0.8rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                        <div style="font-size: 0.85rem; font-weight: 800; color: #FFFFFF; letter-spacing: 0.08em; text-transform: uppercase; margin: 1.25rem 0 0.8rem 0; display: flex; align-items: center; gap: 0.5rem;">
                             <span>📸 SUSPICIOUS FRAME EVIDENCE GALLERY</span>
-                            <span style="background: rgba(255, 69, 79, 0.2); color: #FF454F; font-size: 0.72rem; padding: 0.15rem 0.5rem; border-radius: 4px; font-weight: 800;">FLAGGED FRAMES</span>
+                            <span class="badge-threat" style="font-size: 0.68rem;">FLAGGED FRAMES</span>
                         </div>
                     """)
 
-                    # Render cards in responsive columns (up to 4 per row)
                     cols_gallery = st.columns(min(4, len(suspicious_frames)))
                     for idx, s_frame in enumerate(suspicious_frames):
                         col_idx = idx % min(4, len(suspicious_frames))
                         with cols_gallery[col_idx]:
                             render_html(f"""
-                                <div class="cyber-card" style="padding: 0.6rem; margin-bottom: 0.8rem; border: 1px solid rgba(255, 69, 79, 0.35);">
-                                    <div style="position: relative; width: 100%; border-radius: 4px; overflow: hidden; margin-bottom: 0.4rem; background: #000;">
+                                <div class="cyber-card" style="padding: 0.6rem; margin-bottom: 0.8rem; border: 2px solid #26327f;">
+                                    <div style="position: relative; width: 100%; border-radius: 6px; overflow: hidden; margin-bottom: 0.4rem; background: #000; border: 1px solid #141d5a;">
                                         <img src="{s_frame['thumbnail']}" style="width: 100%; height: auto; display: block;" alt="Suspicious Frame" />
-                                        <div style="position: absolute; bottom: 4px; right: 4px; background: rgba(5, 11, 20, 0.85); color: #38D9FF; font-size: 0.68rem; font-family: monospace; padding: 2px 5px; border-radius: 3px;">
+                                        <div style="position: absolute; bottom: 4px; right: 4px; background: rgba(0, 6, 33, 0.88); color: #ffe3c5; font-size: 0.68rem; font-family: monospace; padding: 2px 6px; border-radius: 999px; border: 1px solid #ffe3c5;">
                                             {s_frame['timestamp_sec']}s
                                         </div>
                                     </div>
-                                    <div style="font-size: 0.72rem; font-weight: 800; color: #FF7A00; text-transform: uppercase; margin-bottom: 0.2rem;">
+                                    <div style="font-size: 0.72rem; font-weight: 800; color: #ffe3c5; text-transform: uppercase; margin-bottom: 0.2rem;">
                                         {s_frame['category']}
                                     </div>
-                                    <div style="font-size: 0.68rem; color: #8BA2C1; line-height: 1.35;">
+                                    <div style="font-size: 0.68rem; color: #a9b4e8; line-height: 1.35;">
                                         {s_frame['reason']}
                                     </div>
                                 </div>
@@ -411,8 +409,8 @@ with tab_video:
 
                 # ================= FORENSIC AUDIT SUMMARY BOX =================
                 render_html(f"""
-                    <div style="background: rgba(22, 139, 255, 0.08); border: 1px solid rgba(22, 139, 255, 0.2); border-radius: 6px; padding: 1rem 1.25rem; margin-top: 1.25rem; font-size: 0.82rem; color: #C2D1E0; line-height: 1.6;">
-                        <span style="color: #38D9FF; font-weight: 800; letter-spacing: 0.06em;">COMPREHENSIVE MULTI-MODAL AUDIT REPORT:</span><br/>
+                    <div style="background: #0a1240; border: 2px solid #26327f; border-radius: 10px; padding: 1rem 1.25rem; margin-top: 1.25rem; font-size: 0.82rem; color: #a9b4e8; line-height: 1.6; box-shadow: 3px 3px 0px #182276;">
+                        <span style="color: #ffe3c5; font-weight: 800; letter-spacing: 0.06em;">COMPREHENSIVE MULTI-MODAL AUDIT REPORT:</span><br/>
                         {explanation}
                     </div>
                 """)
@@ -421,7 +419,7 @@ with tab_video:
 # ----------------- TAB 2: STATIC FACE ANALYSIS -----------------
 with tab_image:
     render_html("""
-        <div style="font-size: 0.82rem; font-weight: 700; color: #8BA2C1; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem;">
+        <div style="font-size: 0.82rem; font-weight: 800; color: #ffe3c5; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem;">
             Ingest Static Portrait (JPG, PNG)
         </div>
     """)
@@ -445,17 +443,17 @@ with tab_image:
         with col_f1:
             annotated = img_bgr.copy()
             for (x, y, w, h) in boxes:
-                cv2.rectangle(annotated, (x, y), (x + w, y + h), (56, 217, 255), 2)
+                cv2.rectangle(annotated, (x, y), (x + w, y + h), (34, 217, 116), 2)
             annotated_rgb = cv2.cvtColor(annotated, cv2.COLOR_BGR2RGB)
             st.image(annotated_rgb, caption=f"Detected {len(boxes)} face(s)", use_container_width=True)
 
         with col_f2:
             render_html(f"""
                 <div class="cyber-card">
-                    <div style="font-weight: 700; color: #FFFFFF; font-size: 1rem; margin-bottom: 0.4rem;">
+                    <div style="font-weight: 800; color: #FFFFFF; font-size: 1rem; margin-bottom: 0.4rem;">
                         Facial Localization Status
                     </div>
-                    <div style="font-size: 0.82rem; color: #8BA2C1; line-height: 1.5;">
+                    <div style="font-size: 0.82rem; color: #a9b4e8; line-height: 1.5;">
                         Identified <b>{len(boxes)}</b> human face regions in the static image.<br/>
                         Each detected face is cropped and normalized to 299x299 dimensions for XceptionNet forensic feature extraction.
                     </div>

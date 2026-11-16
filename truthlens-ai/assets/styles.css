@@ -1,73 +1,101 @@
-/* TruthLens AI - Advanced Cybersecurity Command Center Theme */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&display=swap');
+/* TruthLens AI - Road to Milky Way Cosmic Space Theme */
+/* Color Palette & Design System matching roadtomilkyway.com */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap');
 
 :root {
-    --bg-primary: #050B14;
-    --bg-card: #0B1D32;
-    --bg-card-hover: #0F2744;
-    --bg-card-glass: rgba(11, 29, 50, 0.75);
-    --border-color: rgba(22, 139, 255, 0.22);
-    --border-glow: rgba(56, 217, 255, 0.5);
-    --text-primary: #F0F4F8;
-    --text-secondary: #8BA2C1;
-    --text-muted: #4F6785;
-    --blue-electric: #168BFF;
-    --cyan-accent: #38D9FF;
-    --threat-red: #FF454F;
-    --threat-amber: #FFB300;
-    --safe-green: #19D69B;
+    /* Road to Milky Way Core Palette */
+    --void: #000621;        /* Deep space black-navy */
+    --hull: #0a1240;        /* Spacecraft hull navy card background */
+    --hull2: #101957;       /* Secondary card/panel container */
+    --hull3: #1a2570;       /* Active / hover card background */
+    --edge: #26327f;        /* Cosmic card border */
+    --line: #141d5a;        /* Grid and subtle separation lines */
+    --dim: #a9b4e8;         /* Subtitle / muted text */
+    --ink: #ffffff;         /* Main bright crisp white text */
+    --ink2: #ffe3c5;        /* Warm cosmic cream/peach badge & accent */
+    --ink3: #bac3ee;        /* Soft lavender blue text */
+    --red: #d13f30;         /* Cosmic ruby / threat red */
+    --green: #22d974;       /* Neon aurora green / safe indicator */
+    --blue: #506cd9;        /* Electric cobalt milky way blue */
+    --pink: #f6aac8;        /* Cosmic nebula pink */
+    --hazard: #ead11f;      /* Solar flare yellow / warning */
+    --cyan: #22d974;        /* Aurora cyan/green */
+    --sky: #a9b8f2;         /* Celestial starlight blue */
+    --shadow-hull: #182276; /* Hard retro-cosmic shadow */
 }
 
 /* Global resets & typography */
 html, body, [data-testid="stAppViewContainer"] {
-    background-color: var(--bg-primary) !important;
-    color: var(--text-primary) !important;
+    background-color: var(--void) !important;
+    color: var(--ink) !important;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
 
-/* High-tech cyber grid background */
+/* Road to Milky Way: Deep Space Starfield & Cosmic Grid */
 [data-testid="stAppViewContainer"] {
     background: 
-        radial-gradient(circle at 50% 25%, rgba(22, 139, 255, 0.12) 0%, transparent 60%),
-        radial-gradient(circle at 10% 80%, rgba(255, 69, 79, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(56, 217, 255, 0.06) 0%, transparent 45%),
-        linear-gradient(rgba(5, 11, 20, 0.94), rgba(5, 11, 20, 0.94)),
-        repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(22, 139, 255, 0.02) 40px, rgba(22, 139, 255, 0.02) 41px),
-        repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(22, 139, 255, 0.02) 40px, rgba(22, 139, 255, 0.02) 41px),
-        #050B14 !important;
+        radial-gradient(circle at 50% 15%, rgba(80, 108, 217, 0.18) 0%, transparent 55%),
+        radial-gradient(circle at 85% 75%, rgba(246, 170, 200, 0.10) 0%, transparent 40%),
+        radial-gradient(circle at 15% 85%, rgba(34, 217, 116, 0.08) 0%, transparent 40%),
+        linear-gradient(rgba(0, 6, 33, 0.94), rgba(0, 6, 33, 0.94)),
+        repeating-linear-gradient(0deg, transparent, transparent 48px, rgba(38, 50, 127, 0.15) 48px, rgba(38, 50, 127, 0.15) 49px),
+        repeating-linear-gradient(90deg, transparent, transparent 48px, rgba(38, 50, 127, 0.15) 48px, rgba(38, 50, 127, 0.15) 49px),
+        #000621 !important;
 }
 
 /* Sidebar styling */
 [data-testid="stSidebar"] {
-    background-color: #071322 !important;
-    border-right: 1px solid var(--border-color) !important;
+    background-color: #060b29 !important;
+    border-right: 2px solid var(--line) !important;
 }
 
 [data-testid="stSidebarNav"] span {
-    color: var(--text-secondary) !important;
-    font-weight: 500 !important;
-    font-size: 0.9rem !important;
+    color: var(--dim) !important;
+    font-weight: 600 !important;
+    font-size: 0.88rem !important;
+    letter-spacing: 0.02em !important;
+}
+
+[data-testid="stSidebarNav"] a[aria-current="page"] {
+    background: rgba(80, 108, 217, 0.15) !important;
+    border: 1px solid var(--edge) !important;
+    border-radius: 8px !important;
 }
 
 [data-testid="stSidebarNav"] a[aria-current="page"] span {
-    color: var(--cyan-accent) !important;
-    font-weight: 700 !important;
-    text-shadow: 0 0 10px rgba(56, 217, 255, 0.5);
+    color: var(--ink2) !important;
+    font-weight: 800 !important;
+    text-shadow: 0 0 10px rgba(255, 227, 197, 0.5);
 }
 
 header[data-testid="stHeader"] {
     background: transparent !important;
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--void);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--edge);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--blue);
+}
+
 /* --- ANIMATION KEYFRAMES --- */
 
-/* Rotating Cyber Ring 1 (Clockwise) */
+/* Cosmic Star Orbit Rings (Clockwise & CCW) */
 @keyframes ring-rotate-cw {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
 
-/* Rotating Cyber Ring 2 (Counter-Clockwise) */
 @keyframes ring-rotate-ccw {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(-360deg); }
@@ -80,7 +108,7 @@ header[data-testid="stHeader"] {
         opacity: 0.9;
     }
     50% {
-        opacity: 0.5;
+        opacity: 0.45;
     }
     100% {
         transform: scale(2.8);
@@ -88,15 +116,15 @@ header[data-testid="stHeader"] {
     }
 }
 
-/* Shield Neon Breathing Glow */
+/* Cosmic Portal / Shield Breathing Glow */
 @keyframes shield-breathe {
     0%, 100% {
-        box-shadow: 0 0 25px rgba(22, 139, 255, 0.45), 0 0 50px rgba(56, 217, 255, 0.25), inset 0 0 15px rgba(56, 217, 255, 0.3);
-        border-color: rgba(56, 217, 255, 0.8);
+        box-shadow: 0 0 25px rgba(80, 108, 217, 0.5), 0 0 50px rgba(246, 170, 200, 0.2), inset 0 0 15px rgba(255, 227, 197, 0.3);
+        border-color: var(--ink2);
     }
     50% {
-        box-shadow: 0 0 40px rgba(22, 139, 255, 0.75), 0 0 80px rgba(56, 217, 255, 0.45), inset 0 0 25px rgba(56, 217, 255, 0.5);
-        border-color: #38D9FF;
+        box-shadow: 0 0 45px rgba(80, 108, 217, 0.8), 0 0 80px rgba(80, 108, 217, 0.4), inset 0 0 25px rgba(255, 227, 197, 0.5);
+        border-color: #ffffff;
     }
 }
 
@@ -141,18 +169,24 @@ header[data-testid="stHeader"] {
     }
 }
 
-/* --- CYBER DECORATIVE & CARD STYLES --- */
+/* Subtle Cosmic Bobbing */
+@keyframes cosmic-drift {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+/* --- ROAD TO MILKY WAY CARDS & CONTAINERS --- */
 
 .cyber-card {
-    background: #0B1D32;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 1rem 1.15rem;
-    margin-bottom: 0.85rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    background: var(--hull);
+    border: 2px solid var(--edge);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.95rem;
+    box-shadow: 3px 3px 0px var(--shadow-hull);
     position: relative;
     overflow: hidden;
-    transition: all 0.25s ease-in-out;
+    transition: all 0.22s cubic-bezier(0.34, 1.2, 0.64, 1);
 }
 
 .cyber-card::before {
@@ -162,170 +196,177 @@ header[data-testid="stHeader"] {
     left: 0;
     width: 100%;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(56, 217, 255, 0.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 227, 197, 0.35), transparent);
 }
 
 .cyber-card:hover {
-    border-color: var(--border-glow);
-    box-shadow: 0 6px 24px rgba(22, 139, 255, 0.2);
-    transform: translateY(-2px);
+    border-color: var(--blue);
+    box-shadow: 5px 5px 0px var(--shadow-hull);
+    transform: translate(-2px, -2px);
 }
 
 .cyber-card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(22, 139, 255, 0.15);
+    border-bottom: 1.5px solid var(--line);
     padding-bottom: 0.5rem;
     margin-bottom: 0.75rem;
 }
 
 .cyber-card-title {
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: var(--ink);
 }
 
 .cyber-card-subtitle {
-    font-size: 0.68rem;
-    color: var(--text-secondary);
+    font-size: 0.7rem;
+    color: var(--dim);
     font-family: 'JetBrains Mono', monospace;
 }
 
-/* Stat card metrics */
+/* Road to Milky Way Stat Card */
 .stat-card {
-    background: #0B1D32;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
+    background: var(--hull);
+    border: 2px solid var(--edge);
+    border-radius: 12px;
     padding: 0.85rem 1rem;
-    min-height: 85px;
+    min-height: 90px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: all 0.2s ease;
+    box-shadow: 3px 3px 0px var(--shadow-hull);
+    transition: all 0.22s cubic-bezier(0.34, 1.2, 0.64, 1);
 }
 
 .stat-card:hover {
-    border-color: var(--cyan-accent);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(22, 139, 255, 0.15);
+    border-color: var(--ink2);
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px var(--shadow-hull);
 }
 
 .stat-card .stat-label {
     font-size: 0.7rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--text-secondary);
+    color: var(--dim);
     font-weight: 700;
 }
 
 .stat-card .stat-value {
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: #FFFFFF;
+    font-size: 1.65rem;
+    font-weight: 900;
+    color: var(--ink);
     font-family: 'JetBrains Mono', monospace;
+    letter-spacing: -0.02em;
 }
 
 .stat-card .stat-footer {
     font-size: 0.68rem;
-    color: var(--text-muted);
+    color: var(--ink3);
 }
 
-/* Threat Badges */
+/* Road to Milky Way Pill Badges */
 .badge-threat {
-    background: rgba(255, 69, 79, 0.16);
-    color: var(--threat-red);
-    border: 1px solid rgba(255, 69, 79, 0.4);
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.7rem;
-    font-weight: 700;
+    background: rgba(209, 63, 48, 0.16);
+    color: var(--red);
+    border: 1.5px solid var(--red);
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 800;
     letter-spacing: 0.06em;
     font-family: 'JetBrains Mono', monospace;
     display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.35rem;
+    box-shadow: 2px 2px 0px rgba(209, 63, 48, 0.4);
 }
 
 .badge-safe {
-    background: rgba(25, 214, 155, 0.16);
-    color: var(--safe-green);
-    border: 1px solid rgba(25, 214, 155, 0.4);
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.7rem;
-    font-weight: 700;
+    background: rgba(34, 217, 116, 0.15);
+    color: var(--green);
+    border: 1.5px solid var(--green);
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 800;
     font-family: 'JetBrains Mono', monospace;
     display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.35rem;
+    box-shadow: 2px 2px 0px rgba(34, 217, 116, 0.4);
 }
 
 .badge-warning {
-    background: rgba(255, 179, 0, 0.16);
-    color: var(--threat-amber);
-    border: 1px solid rgba(255, 179, 0, 0.4);
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.7rem;
-    font-weight: 700;
+    background: rgba(234, 209, 31, 0.15);
+    color: var(--hazard);
+    border: 1.5px solid var(--hazard);
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 800;
     font-family: 'JetBrains Mono', monospace;
     display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.35rem;
+    box-shadow: 2px 2px 0px rgba(234, 209, 31, 0.4);
 }
 
 .badge-info {
-    background: rgba(22, 139, 255, 0.16);
-    color: var(--cyan-accent);
-    border: 1px solid rgba(56, 217, 255, 0.35);
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.7rem;
-    font-weight: 700;
+    background: rgba(80, 108, 217, 0.2);
+    color: var(--ink2);
+    border: 1.5px solid var(--ink2);
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 800;
     font-family: 'JetBrains Mono', monospace;
     display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.35rem;
+    box-shadow: 2px 2px 0px var(--shadow-hull);
 }
 
 /* Pulsing radar dots */
 .pulse-dot {
-    width: 7px;
-    height: 7px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     display: inline-block;
 }
 
 .pulse-dot.online {
-    background-color: var(--safe-green);
-    box-shadow: 0 0 8px var(--safe-green);
+    background-color: var(--green);
+    box-shadow: 0 0 8px var(--green);
     animation: live-pulse 1.8s infinite ease-in-out;
 }
 
 .pulse-dot.threat {
-    background-color: var(--threat-red);
-    box-shadow: 0 0 8px var(--threat-red);
+    background-color: var(--red);
+    box-shadow: 0 0 8px var(--red);
     animation: live-pulse 1.2s infinite ease-in-out;
 }
 
 .pulse-dot.standby {
-    background-color: var(--threat-amber);
-    box-shadow: 0 0 8px var(--threat-amber);
+    background-color: var(--hazard);
+    box-shadow: 0 0 8px var(--hazard);
     animation: live-pulse 2.2s infinite ease-in-out;
 }
 
-/* Cyber Map Container & Central Shield */
+/* Road to Milky Way Central Map & Cosmic Portal */
 .cyber-map-container {
-    background: #081628;
-    border: 1px solid rgba(22, 139, 255, 0.25);
-    border-radius: 8px;
+    background: var(--hull);
+    border: 2px solid var(--edge);
+    border-radius: 12px;
     position: relative;
     overflow: hidden;
     padding: 0.75rem;
     min-height: 380px;
+    box-shadow: 3px 3px 0px var(--shadow-hull);
 }
 
 .cyber-shield-wrapper {
@@ -345,7 +386,7 @@ header[data-testid="stHeader"] {
     position: absolute;
     width: 130px;
     height: 130px;
-    border: 2px dashed rgba(56, 217, 255, 0.6);
+    border: 2px dashed var(--ink2);
     border-radius: 50%;
     animation: ring-rotate-cw 18s linear infinite;
 }
@@ -354,7 +395,7 @@ header[data-testid="stHeader"] {
     position: absolute;
     width: 106px;
     height: 106px;
-    border: 1px dashed rgba(22, 139, 255, 0.8);
+    border: 1.5px dashed var(--blue);
     border-radius: 50%;
     animation: ring-rotate-ccw 12s linear infinite;
 }
@@ -363,8 +404,8 @@ header[data-testid="stHeader"] {
     width: 82px;
     height: 82px;
     border-radius: 50%;
-    background: radial-gradient(circle, #0F3B68 0%, #081D34 75%, #050B14 100%);
-    border: 2px solid #38D9FF;
+    background: radial-gradient(circle, #506cd9 0%, #101957 70%, #000621 100%);
+    border: 2.5px solid var(--ink2);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -377,9 +418,9 @@ header[data-testid="stHeader"] {
     position: absolute;
     width: 10px;
     height: 10px;
-    background: #FF454F;
+    background: var(--red);
     border-radius: 50%;
-    box-shadow: 0 0 10px #FF454F;
+    box-shadow: 0 0 10px var(--red);
 }
 
 .radar-blip::after {
@@ -389,7 +430,7 @@ header[data-testid="stHeader"] {
     left: -5px;
     width: 20px;
     height: 20px;
-    border: 2px solid #FF454F;
+    border: 2px solid var(--red);
     border-radius: 50%;
     animation: radar-ping 2s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
 }
@@ -399,13 +440,14 @@ header[data-testid="stHeader"] {
     position: relative;
     width: 100%;
     height: 140px;
-    background: #040A14;
-    border: 1px solid rgba(22, 139, 255, 0.25);
-    border-radius: 6px;
+    background: var(--void);
+    border: 2px solid var(--edge);
+    border-radius: 10px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: inset 0 0 15px rgba(0, 6, 33, 0.8);
 }
 
 .brain-laser {
@@ -413,17 +455,17 @@ header[data-testid="stHeader"] {
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #38D9FF, #168BFF, #38D9FF, transparent);
-    box-shadow: 0 0 12px #38D9FF, 0 0 20px #168BFF;
+    background: linear-gradient(90deg, transparent, var(--green), var(--blue), var(--pink), transparent);
+    box-shadow: 0 0 12px var(--green), 0 0 20px var(--blue);
     animation: scan-laser 3.2s ease-in-out infinite;
     z-index: 5;
 }
 
-/* Cyber Shimmer Progress Bar */
+/* Shimmer Progress Track */
 .cyber-progress-track {
-    background: #061120;
-    border: 1px solid rgba(22, 139, 255, 0.3);
-    border-radius: 4px;
+    background: var(--void);
+    border: 1.5px solid var(--edge);
+    border-radius: 999px;
     height: 8px;
     width: 100%;
     overflow: hidden;
@@ -432,9 +474,9 @@ header[data-testid="stHeader"] {
 
 .cyber-progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #168BFF 0%, #38D9FF 50%, #168BFF 100%);
+    background: linear-gradient(90deg, var(--blue) 0%, var(--green) 50%, var(--blue) 100%);
     background-size: 200% 100%;
-    border-radius: 3px;
+    border-radius: 999px;
     animation: shimmer-glow 2.5s infinite linear;
 }
 
@@ -443,26 +485,27 @@ header[data-testid="stHeader"] {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.4rem 0.3rem;
-    border-bottom: 1px solid rgba(22, 139, 255, 0.1);
-    font-size: 0.72rem;
+    padding: 0.45rem 0.35rem;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.74rem;
     transition: background 0.15s ease;
 }
 
 .feed-row:hover {
-    background: rgba(22, 139, 255, 0.08);
+    background: rgba(80, 108, 217, 0.12);
 }
 
-/* Terminal box */
+/* Road to Milky Way Terminal Box */
 .terminal-box {
-    background: #040810;
-    border: 1px solid rgba(22, 139, 255, 0.2);
-    border-radius: 6px;
-    padding: 0.75rem 0.9rem;
+    background: var(--void);
+    border: 2px solid var(--edge);
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.75rem;
-    color: #38D9FF;
-    line-height: 1.45;
+    color: var(--green);
+    line-height: 1.5;
+    box-shadow: 3px 3px 0px var(--shadow-hull);
 }
 
 /* Compliance circular gauges */
@@ -470,42 +513,110 @@ header[data-testid="stHeader"] {
     width: 58px;
     height: 58px;
     border-radius: 50%;
-    border: 2px solid rgba(25, 214, 155, 0.5);
-    background: rgba(25, 214, 155, 0.08);
+    border: 2px solid var(--green);
+    background: rgba(34, 217, 116, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 0.65rem;
-    color: #19D69B;
-    font-weight: 700;
+    color: var(--green);
+    font-weight: 800;
     font-family: 'JetBrains Mono', monospace;
+    box-shadow: 2px 2px 0px var(--shadow-hull);
     transition: all 0.2s ease;
 }
 
 .compliance-badge:hover {
-    border-color: #19D69B;
-    box-shadow: 0 0 12px rgba(25, 214, 155, 0.4);
-    transform: scale(1.05);
+    border-color: var(--ink2);
+    color: var(--ink2);
+    box-shadow: 0 0 15px rgba(34, 217, 116, 0.5);
+    transform: scale(1.06);
 }
 
-/* Buttons */
+/* Road to Milky Way Buttons */
 .stButton > button {
-    background: linear-gradient(180deg, #168BFF 0%, #0F6ED4 100%) !important;
-    color: #FFFFFF !important;
-    border: 1px solid var(--cyan-accent) !important;
-    border-radius: 6px !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.03em !important;
-    padding: 0.45rem 1.15rem !important;
-    transition: all 0.2s ease !important;
-    box-shadow: 0 2px 10px rgba(22, 139, 255, 0.3) !important;
+    background: var(--blue) !important;
+    color: #ffffff !important;
+    border: 2px solid var(--ink2) !important;
+    border-radius: 999px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em !important;
+    padding: 0.5rem 1.4rem !important;
+    transition: all 0.22s cubic-bezier(0.34, 1.2, 0.64, 1) !important;
+    box-shadow: 3px 3px 0px var(--shadow-hull) !important;
 }
 
 .stButton > button:hover {
-    background: linear-gradient(180deg, #38D9FF 0%, #168BFF 100%) !important;
-    color: #050B14 !important;
-    border-color: #FFFFFF !important;
-    box-shadow: 0 0 18px rgba(56, 217, 255, 0.65) !important;
-    transform: translateY(-1px) !important;
+    background: var(--ink2) !important;
+    color: var(--void) !important;
+    border-color: #ffffff !important;
+    box-shadow: 5px 5px 0px var(--shadow-hull) !important;
+    transform: translate(-2px, -2px) !important;
+}
+
+/* Road to Milky Way Form Controls */
+.stTextInput > div > div > input,
+.stTextArea > div > div > textarea,
+.stSelectbox > div > div {
+    background-color: var(--hull) !important;
+    border: 2px solid var(--edge) !important;
+    border-radius: 8px !important;
+    color: var(--ink) !important;
+    box-shadow: 2px 2px 0px var(--shadow-hull) !important;
+}
+
+.stTextInput > div > div > input:focus,
+.stTextArea > div > div > textarea:focus {
+    border-color: var(--ink2) !important;
+    box-shadow: 0 0 12px rgba(80, 108, 217, 0.4) !important;
+}
+
+/* File Uploader */
+[data-testid="stFileUploadDropzone"] {
+    background-color: var(--hull) !important;
+    border: 2px dashed var(--edge) !important;
+    border-radius: 12px !important;
+    box-shadow: 3px 3px 0px var(--shadow-hull) !important;
+}
+
+[data-testid="stFileUploadDropzone"]:hover {
+    border-color: var(--ink2) !important;
+}
+
+/* Sliders */
+.stSlider [data-baseweb="slider"] {
+    margin-top: 0.5rem;
+}
+
+/* Tabs */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 0.5rem;
+    background: var(--void);
+    padding: 4px;
+    border-radius: 999px;
+    border: 2px solid var(--edge);
+    box-shadow: 3px 3px 0px var(--shadow-hull);
+    display: inline-flex;
+}
+
+.stTabs [data-baseweb="tab"] {
+    border-radius: 999px !important;
+    padding: 0.35rem 1rem !important;
+    color: var(--dim) !important;
+    font-weight: 700 !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+.stTabs [aria-selected="true"] {
+    background: var(--ink2) !important;
+    color: var(--void) !important;
+    box-shadow: 0 0 10px rgba(255, 227, 197, 0.4) !important;
+}
+
+/* Progress bar inside Streamlit */
+.stProgress > div > div > div > div {
+    background: linear-gradient(90deg, var(--blue), var(--green)) !important;
+    border-radius: 999px !important;
 }
