@@ -4,7 +4,8 @@
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.30+-FF4B4B.svg)](https://streamlit.io/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C.svg)](https://pytorch.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![OpenCV](https://img.shields.io/badge/OpenCV-Computer%20Vision-green.svg)](https://opencv.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 **TruthLens AI** is an enterprise-grade multimodal media intelligence and forensics platform designed to detect, analyze, and catalog synthetic digital media and misinformation. Built with a high-performance **CyberShield AI Security Operations Center (SOC)** interface, TruthLens delivers real-time threat intelligence, explainable NLP misinformation detection, Vision Transformer synthetic image classification, and universal zero-face video forensics.
 
@@ -33,7 +34,7 @@
 - **Payload & Metadata Extraction**: Forensic analysis of dimensions, color channels, and EXIF headers.
 
 ### 4. Universal AI Video Forensics (`pages/4_Deepfake_Video.py`)
-- **Zero-Face Multi-Category Detection**: Unlike conventional facial deepfake tools, TruthLens AI analyzes videos even when **NO human face** is present:
+- **Zero-Face Multi-Category Detection**: Unlike conventional facial deepfake tools that fail on face-free footage, TruthLens AI analyzes videos even when **NO human face** is present:
   1. *Face Deepfakes*: Face swapping, reenactment, synthetic facial generation.
   2. *Fully AI-Generated Videos*: AI landscapes, architecture, synthetic nature, and cities.
   3. *AI-Generated Synthetic Humans*: Full-body synthetic human motion and synthetic avatars.
@@ -70,34 +71,176 @@
 
 ---
 
-## 🚀 Quickstart & Installation
+## 🚀 How to Run the Project (Step-by-Step Guide)
 
-### 1. Clone the Repository
+Follow these instructions to set up and run TruthLens AI on your local machine.
+
+### Prerequisites
+
+- **Python 3.11** (or Python 3.10+) installed. Download from [python.org](https://www.python.org/).
+- **Git** installed. Download from [git-scm.com](https://git-scm.com/).
+- *(Optional)* An NVIDIA GPU with CUDA drivers for accelerated deep learning inference. If no GPU is found, the system automatically falls back to CPU mode.
+
+---
+
+### Step 1: Clone the Repository
+
+Open your terminal or command prompt and clone the repository:
+
 ```bash
 git clone https://github.com/aneesh188/truthlens-ai.git
 cd truthlens-ai
 ```
 
-### 2. Install Dependencies
+---
+
+### Step 2: (Recommended) Create and Activate a Virtual Environment
+
+It is recommended to run the project inside a virtual environment to prevent package conflicts.
+
+**On Windows (PowerShell):**
 ```powershell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+```
+*(If PowerShell restricts script execution, run: `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`)*
+
+**On Windows (Command Prompt):**
+```cmd
+python -m venv venv
+venv\Scripts\activate.bat
+```
+
+**On macOS / Linux:**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+---
+
+### Step 3: Install Required Dependencies
+
+Install all required Python libraries via pip:
+
+```bash
 pip install -r truthlens-ai/requirements.txt
 ```
 
-### 3. Launch the Application
-You can run the application directly using either:
+> **Note:** If you are already inside the `truthlens-ai/` directory, simply run:
+> ```bash
+> pip install -r requirements.txt
+> ```
 
-**Using Python / Streamlit:**
+---
+
+### Step 4: Launch TruthLens AI
+
+You have two easy ways to launch the platform:
+
+#### Option A: Run via Python Module (Recommended for All Platforms)
+From inside the repository:
+
 ```powershell
 cd truthlens-ai
 python -m streamlit run app.py
 ```
 
-**Using the Windows launcher script:**
-```powershell
-.\run_truthlens.bat
-```
+> **Why `python -m streamlit run app.py`?**
+> On Windows, running `streamlit run app.py` directly can sometimes fail with `'streamlit' is not recognized as a cmdlet` if Python's `Scripts/` folder is not added to your system `PATH`. Invoking Python with `-m streamlit` works reliably every time!
 
-Access the command center in your browser at `http://localhost:8501`.
+#### Option B: Windows 1-Click Launchers
+If you are on Windows, simply double-click or run either launcher from the root folder:
+- **Batch file**: Double-click `run_truthlens.bat`
+- **PowerShell script**: Right-click `run_truthlens.ps1` and select *Run with PowerShell*, or run:
+  ```powershell
+  .\run_truthlens.ps1
+  ```
+
+---
+
+### Step 5: Open in Your Browser
+
+Once started, the terminal will display the local URL. Open your web browser and navigate to:
+
+👉 **`http://localhost:8501`**
+
+---
+
+## 📖 How to Use TruthLens AI (User Walkthrough)
+
+Once the application is running in your browser:
+
+1. **Dashboard & Threat Intelligence (`pages/1_Dashboard.py`)**:
+   - Inspect the real-time CyberShield AI command center with live animated attack arcs and rotating shield HUD.
+   - Click the expandable **"Launch Hyperspace Sensory Dive"** at the top to experience the 3D particle tunnel and globe.
+   - Review CPU/GPU hardware utilization and active threat engines in the left sidebar.
+
+2. **Fake News Text Intelligence (`pages/2_Fake_News.py`)**:
+   - Enter any news headline, article body, or claim in the text box.
+   - Or click one of the pre-loaded benchmark buttons (e.g. *Fed Interest Rates* or *Antarctica Retinal Reset*).
+   - Click **Run Forensic Analysis**.
+   - Review the authentic vs fake verdict and inspect the **LIME Explainable AI token attribution chart** showing which words triggered the verdict.
+
+3. **AI-Generated Image Forensics (`pages/3_AI_Image.py`)**:
+   - Upload any image file (`PNG`, `JPG`, `WEBP`).
+   - Click **Run Forensic Inspection**.
+   - Review the Vision Transformer synthetic probability and EXIF payload integrity.
+
+4. **Universal Video Forensics (`pages/4_Deepfake_Video.py`)**:
+   - Upload any video file (`MP4`, `AVI`, `MOV`).
+   - Adjust the frame sampling slider (samples frames proportionally across start, middle, and end).
+   - Click **Execute Forensic Inspection**.
+   - The engine automatically runs:
+     - 5-Category Taxonomy Classification (works even with **zero human faces**).
+     - Temporal Optical Flow consistency (Farneback motion vectors).
+     - Audio spectral FFT analysis to flag synthetic neural vocoder cutoffs.
+     - Flagged frame evidence gallery with timestamps.
+
+5. **Analysis History & Audit Vault (`pages/5_Analysis_History.py`)**:
+   - View the persistent SQLite ledger of all inspections performed.
+   - Filter by modality (Text, Image, Video) or search by tracking code.
+   - Export full compliance audit reports to CSV with one click.
+
+---
+
+## 🛠️ Troubleshooting FAQ
+
+<details>
+<summary><b>1. Error: <code>'streamlit' is not recognized as the name of a cmdlet</code></b></summary>
+<br>
+This happens on Windows when Python's <code>Scripts</code> directory is not in your system environment variable <code>PATH</code>.
+<br><br>
+<b>Solution:</b> Always launch with Python module syntax:
+<pre><code>python -m streamlit run app.py</code></pre>
+</details>
+
+<details>
+<summary><b>2. How do I change the default port (8501)?</b></summary>
+<br>
+If port 8501 is already in use by another service, launch with a custom port:
+<pre><code>python -m streamlit run app.py --server.port 8502</code></pre>
+</details>
+
+<details>
+<summary><b>3. Does TruthLens AI require an internet connection?</b></summary>
+<br>
+No! TruthLens AI is designed with offline fallback capabilities:
+<ul>
+  <li>If external model weights cannot be downloaded, the system automatically uses its local pretrained TF-IDF Logistic Regression classifier and local computer vision pipelines.</li>
+  <li>All facial localization, Farneback optical flow, 2D FFT spectral analysis, and SQLite history work 100% locally and offline.</li>
+</ul>
+</details>
+
+<details>
+<summary><b>4. Does TruthLens AI store my uploaded media?</b></summary>
+<br>
+No. TruthLens AI follows a <b>Zero-Persistence Privacy Architecture</b>:
+<ul>
+  <li>Uploaded images and video frames are processed transiently in-memory and deleted immediately upon completion.</li>
+  <li>Only sanitized audit metadata (timestamp, modality, verdict, and confidence score) is recorded to the SQLite ledger.</li>
+</ul>
+</details>
 
 ---
 

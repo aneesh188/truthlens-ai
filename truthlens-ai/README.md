@@ -1,7 +1,13 @@
 # TRUTHLENS AI — Multimodal Media Intelligence & Cybersecurity Platform
 ### Real-Time Threat Intelligence, Universal AI Video Forensics & Deepfake Detection
 
-TruthLens AI is an enterprise-grade multimodal media intelligence and forensics platform designed to detect, analyze, and catalog synthetic digital media and misinformation. Built with a high-performance **CyberShield AI Security Operations Center (SOC)** interface, TruthLens delivers real-time threat intelligence, explainable NLP misinformation detection, Vision Transformer synthetic image classification, and universal zero-face video forensics.
+[![Python 3.11](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.30+-FF4B4B.svg)](https://streamlit.io/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C.svg)](https://pytorch.org/)
+[![OpenCV](https://img.shields.io/badge/OpenCV-Computer%20Vision-green.svg)](https://opencv.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+**TruthLens AI** is an enterprise-grade multimodal media intelligence and forensics platform designed to detect, analyze, and catalog synthetic digital media and misinformation. Built with a high-performance **CyberShield AI Security Operations Center (SOC)** interface, TruthLens delivers real-time threat intelligence, explainable NLP misinformation detection, Vision Transformer synthetic image classification, and universal zero-face video forensics.
 
 ---
 
@@ -28,7 +34,7 @@ TruthLens AI is an enterprise-grade multimodal media intelligence and forensics 
 - **Payload & Metadata Extraction**: Forensic analysis of dimensions, color channels, and EXIF headers.
 
 ### 4. Universal AI Video Forensics (`pages/4_Deepfake_Video.py`)
-- **Zero-Face Multi-Category Detection**: Unlike conventional facial deepfake tools, TruthLens AI analyzes videos even when **NO human face** is present:
+- **Zero-Face Multi-Category Detection**: Unlike conventional facial deepfake tools that fail on face-free footage, TruthLens AI analyzes videos even when **NO human face** is present:
   1. *Face Deepfakes*: Face swapping, reenactment, synthetic facial generation.
   2. *Fully AI-Generated Videos*: AI landscapes, architecture, synthetic nature, and cities.
   3. *AI-Generated Synthetic Humans*: Full-body synthetic human motion and synthetic avatars.
@@ -49,38 +55,91 @@ TruthLens AI is an enterprise-grade multimodal media intelligence and forensics 
 
 ---
 
-## 💻 Tech Stack
+## 🚀 How to Run the Project (Step-by-Step Guide)
 
-- **Python 3.11**
-- **Streamlit** (Cybersecurity Command Center UI & Custom CSS)
-- **PyTorch** (Deep Learning & CUDA Acceleration)
-- **Hugging Face Transformers** (RoBERTa/BERT, Vision Transformers)
-- **OpenCV** (`cv2` video decoding, face detection, normalization)
-- **Scikit-learn** (Metrics, classification pipelines, confusion matrices)
-- **LIME** (Local Interpretable Model-agnostic Explanations)
-- **Plotly** (Interactive radar, donut, and temporal charts)
-- **SQLite** (Persistent audit history ledger)
-- **Pandas & NumPy** (Data processing)
+Follow these instructions to set up and run TruthLens AI on your local machine.
+
+### Prerequisites
+
+- **Python 3.11** (or Python 3.10+) installed. Download from [python.org](https://www.python.org/).
+- **Git** installed. Download from [git-scm.com](https://git-scm.com/).
+- *(Optional)* An NVIDIA GPU with CUDA drivers for accelerated deep learning inference. If no GPU is found, the system automatically falls back to CPU mode.
 
 ---
 
-## 🚀 Quickstart & Execution Guide
+### Step 1: Clone the Repository
 
-### 1. Prerequisites
-Ensure you have **Python 3.11** installed on your system.
-
-### 2. Dependency Installation
-Run the following PowerShell command inside `truthlens-ai`:
-
-```powershell
-pip install -r requirements.txt
+```bash
+git clone https://github.com/aneesh188/truthlens-ai.git
+cd truthlens-ai
 ```
 
-### 3. Launching the Command Center
-Execute:
+---
+
+### Step 2: (Recommended) Create and Activate a Virtual Environment
+
+**On Windows (PowerShell):**
+```powershell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+```
+
+**On Windows (Command Prompt):**
+```cmd
+python -m venv venv
+venv\Scripts\activate.bat
+```
+
+**On macOS / Linux:**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+---
+
+### Step 3: Install Required Dependencies
+
+```bash
+pip install -r truthlens-ai/requirements.txt
+```
+
+---
+
+### Step 4: Launch TruthLens AI
+
+#### Option A: Run via Python Module (Recommended for All Platforms)
+From inside the repository:
 
 ```powershell
+cd truthlens-ai
 python -m streamlit run app.py
 ```
 
-The application will start at `http://localhost:8501`.
+> **Why `python -m streamlit run app.py`?**
+> On Windows, running `streamlit run app.py` directly can sometimes fail with `'streamlit' is not recognized as a cmdlet` if Python's `Scripts/` folder is not added to your system `PATH`. Invoking Python with `-m streamlit` works reliably every time!
+
+#### Option B: Windows 1-Click Launchers
+If you are on Windows, simply double-click or run either launcher from the root folder:
+- **Batch file**: Double-click `run_truthlens.bat`
+- **PowerShell script**: Right-click `run_truthlens.ps1` and select *Run with PowerShell*, or run:
+  ```powershell
+  .\run_truthlens.ps1
+  ```
+
+---
+
+### Step 5: Open in Your Browser
+
+Open your web browser and navigate to:
+
+👉 **`http://localhost:8501`**
+
+---
+
+## 🛠️ Troubleshooting FAQ
+
+- **Error: `'streamlit' is not recognized as a cmdlet`**: Always run using `python -m streamlit run app.py`.
+- **Change Default Port**: Run `python -m streamlit run app.py --server.port 8502`.
+- **Offline Mode**: If external model weights cannot be reached, the system automatically uses local offline fallback classifiers and local computer vision pipelines.
+- **Privacy Architecture**: All media is processed transiently in-memory and wiped immediately upon completion.
